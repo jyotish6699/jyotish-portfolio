@@ -1,6 +1,7 @@
-import { CardStack } from "@/components/cards/CardStack";
 import { AboutCard } from "@/components/about/AboutCard";
+import { CardStack } from "@/components/cards/CardStack";
 import { HeroCard } from "@/components/hero/HeroCard";
+import { SkillsCard } from "@/components/skills/SkillsCard";
 
 export default function Home() {
   return (
@@ -9,6 +10,7 @@ export default function Home() {
         <CardStack>
           <HeroCard />
           <AboutCard />
+          <SkillsCard />
         </CardStack>
       </div>
     </main>
