@@ -5,6 +5,7 @@ import { HeroCard } from "@/components/hero/HeroCard";
 import { LeetCodeCard } from "@/components/leetcode/LeetCodeCard";
 import { ProjectsCard } from "@/components/projects/ProjectsCard";
 import { SkillsCard } from "@/components/skills/SkillsCard";
+import TerminalCard from "@/components/terminal/TerminalCard";
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
           <ProjectsCard />
           <GitHubCard />
           <LeetCodeCard />
+          <TerminalCard />
         </CardStack>
       </div>
     </main>
