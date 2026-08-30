@@ -14,20 +14,24 @@ export function OpenSourceCard() {
       value: `#${gssocAchievement.globalRank}`,
     },
     {
+      label: "Ranking",
+      value: gssocAchievement.ranking,
+    },
+    {
       label: "Score",
       value: gssocAchievement.score.toLocaleString(),
     },
     {
       label: "Merged PRs",
-      value: gssocAchievement.mergedPRs,
+      value: gssocAchievement.mergedPRs.toString(),
     },
     {
       label: "Projects",
-      value: gssocAchievement.projects,
+      value: gssocAchievement.projects.toString(),
     },
     {
       label: "Badges",
-      value: gssocAchievement.badges,
+      value: gssocAchievement.badges.toString(),
     },
   ];
 
@@ -38,9 +42,8 @@ export function OpenSourceCard() {
 
         <div className="mt-8 max-w-4xl">
           <h2 className="section-heading">
-            Building in the
-            {" "}
-            <span className="gradient-text">open.</span>
+            Building in{" "}
+            <span className="gradient-text">the open.</span>
           </h2>
 
           <p className="body-copy mt-6 max-w-2xl text-lg">
@@ -59,7 +62,7 @@ export function OpenSourceCard() {
 
                 <div className="mt-3 flex flex-wrap items-center gap-3">
                   <h3 className="text-3xl font-semibold tracking-tight text-slate-950 md:text-4xl">
-                    {gssocAchievement.program}
+                    {gssocAchievement.program} 2026
                   </h3>
 
                   <span className="rounded-full bg-[var(--accent)]/10 px-3 py-1 text-sm font-semibold text-[var(--accent)]">
@@ -72,21 +75,23 @@ export function OpenSourceCard() {
                 </p>
               </div>
 
-              <div className="rounded-2xl border border-black/10 px-5 py-4 md:min-w-[170px]">
+              <div className="rounded-2xl border border-black/10 px-5 py-4 md:min-w-[180px]">
                 <p className="text-xs font-medium uppercase tracking-[0.2em] text-slate-500">
-                  Ranking
+                  Tier
                 </p>
+
                 <p className="mt-1 text-2xl font-bold text-slate-950">
-                  {gssocAchievement.ranking}
-                </p>
-                <p className="mt-1 text-sm text-slate-500">
                   {gssocAchievement.tier}
+                </p>
+
+                <p className="mt-1 text-sm text-slate-500">
+                  {gssocAchievement.ranking}
                 </p>
               </div>
             </div>
           </div>
 
-          <div className="grid gap-px bg-black/10 sm:grid-cols-2 lg:grid-cols-5">
+          <div className="grid gap-px bg-black/10 sm:grid-cols-2 lg:grid-cols-3">
             {stats.map((stat) => (
               <div
                 key={stat.label}
@@ -95,6 +100,7 @@ export function OpenSourceCard() {
                 <p className="text-xs font-medium uppercase tracking-[0.16em] text-slate-500">
                   {stat.label}
                 </p>
+
                 <p className="mt-2 text-2xl font-semibold tracking-tight text-slate-950">
                   {stat.value}
                 </p>
@@ -107,6 +113,7 @@ export function OpenSourceCard() {
               <p className="font-medium text-slate-950">
                 26 merged contributions across 6 projects.
               </p>
+
               <p className="mt-1 text-sm text-slate-500">
                 A milestone in my open-source journey.
               </p>
@@ -118,13 +125,15 @@ export function OpenSourceCard() {
               aria-expanded={showDetails}
               className="rounded-full border border-black/10 px-5 py-3 text-sm font-semibold text-slate-950 transition hover:-translate-y-0.5 hover:border-black/20 focus:outline-none focus:ring-2 focus:ring-[var(--accent)] focus:ring-offset-2"
             >
-              {showDetails ? "Hide Contributions" : "View Contributions"}
+              {showDetails
+                ? "Hide Contributions"
+                : "View Contributions"}
             </button>
           </div>
 
           {showDetails && (
             <div className="border-t border-black/10 bg-slate-50/70 p-6 md:p-8">
-              <div className="max-w-2xl">
+              <div className="max-w-3xl">
                 <p className="text-sm font-medium uppercase tracking-[0.2em] text-slate-500">
                   Contribution Snapshot
                 </p>
@@ -134,17 +143,19 @@ export function OpenSourceCard() {
                 </h3>
 
                 <p className="mt-3 leading-7 text-slate-600">
-                  Completed GSSoC 2026 with an A Tier ranking, Global Rank
-                  #{gssocAchievement.globalRank}, and {gssocAchievement.mergedPRs}
-                  {" "}merged pull requests across {gssocAchievement.projects}
-                  {" "}projects.
+                  Completed GSSoC 2026 with an A Tier ranking,
+                  Global Rank #{gssocAchievement.globalRank}, a score
+                  of {gssocAchievement.score.toLocaleString()}, and{" "}
+                  {gssocAchievement.mergedPRs} merged pull requests
+                  across {gssocAchievement.projects} projects.
                 </p>
 
                 <div className="mt-6 grid gap-3 sm:grid-cols-3">
                   <div className="rounded-2xl border border-black/10 bg-white p-4">
                     <p className="text-xs uppercase tracking-[0.16em] text-slate-500">
-                      Rank
+                      Global Rank
                     </p>
+
                     <p className="mt-2 text-xl font-semibold">
                       #{gssocAchievement.globalRank}
                     </p>
@@ -152,10 +163,11 @@ export function OpenSourceCard() {
 
                   <div className="rounded-2xl border border-black/10 bg-white p-4">
                     <p className="text-xs uppercase tracking-[0.16em] text-slate-500">
-                      PRs
+                      Score
                     </p>
+
                     <p className="mt-2 text-xl font-semibold">
-                      {gssocAchievement.mergedPRs}
+                      {gssocAchievement.score.toLocaleString()}
                     </p>
                   </div>
 
@@ -163,6 +175,7 @@ export function OpenSourceCard() {
                     <p className="text-xs uppercase tracking-[0.16em] text-slate-500">
                       Badges
                     </p>
+
                     <p className="mt-2 text-xl font-semibold">
                       {gssocAchievement.badges}
                     </p>
