@@ -6,6 +6,8 @@ import { LeetCodeCard } from "@/components/leetcode/LeetCodeCard";
 import { ProjectsCard } from "@/components/projects/ProjectsCard";
 import { SkillsCard } from "@/components/skills/SkillsCard";
 import TerminalCard from "@/components/terminal/TerminalCard";
+import { EducationCard } from "@/components/education/EducationCard";
+import { ExperienceCard } from "@/components/experience/ExperienceCard";
 
 export default function Home() {
   return (
@@ -19,6 +21,8 @@ export default function Home() {
           <GitHubCard />
           <LeetCodeCard />
           <TerminalCard />
+          <EducationCard />
+          <ExperienceCard />
         </CardStack>
       </div>
     </main>
