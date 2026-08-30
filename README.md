@@ -1,94 +1,36 @@
-# Jyotish Kumar — Portfolio
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-> An interactive developer portfolio showcasing my software engineering journey, projects, open-source contributions, and technical interests.
+## Getting Started
 
-## 👋 About
-
-I'm **Jyotish Kumar**, a B.Tech CSE student at **Lovely Professional University**, currently in my 3rd semester.
-
-I'm focused on:
-
-- Software Engineering
-- Developer Tools
-- Backend Systems
-- AI
-- Open Source
-
-This portfolio is designed as an interactive experience rather than a traditional resume website.
-
-## ✨ Highlights
-
-- 🎨 Interactive colorful card-based UI
-- 🧭 Dynamic Island-inspired navigation
-- 🖥️ Interactive developer terminal
-- 🚀 Featured project showcase
-- 📊 GitHub activity and contributions
-- 🧩 Dynamic LeetCode section
-- 🌐 Open-source contribution showcase
-- 🎓 Ongoing academic journey
-- 🌙 Dark and light themes
-- 📱 Responsive design
-- ⚡ Smooth animations and transitions
-- 📬 Contact form
-
-## 🚀 Featured Projects
-
-### AegisFlow
-
-A developer intelligence platform focused on continuously understanding developer workflows through structured events, timelines, and context.
-
-**Status:** Ongoing
-
-### FaceMark
-
-An AI-assisted classroom attendance system using face detection and recognition while keeping teacher review and approval central.
-
-**Status:** Ongoing  
-**Type:** Personal / First Hackathon Project
-
-### My Todo App
-
-A full-stack MERN task management application with authentication, drag-and-drop organization, customization, guest mode, and responsive UI.
-
-**Status:** Completed / Deployed
-
-## 🛠️ Tech Stack
-
-### Core
-
-- Next.js
-- React
-- TypeScript
-- Tailwind CSS
-
-### UI & Animation
-
-- Framer Motion
-- Lucide React
-
-### Forms
-
-- React Hook Form
-- Zod
-- Formspree
-
-### Development
-
-- Git
-- GitHub
-- Docker
-- Linux
-
-## 🌐 Developer Profiles
-
-- **GitHub:** https://github.com/jyotish6699
-- **LinkedIn:** https://www.linkedin.com/in/jyotish-kumar-768263366/
-- **LeetCode:** https://leetcode.com/u/Sx5pUQ256W/
-
-## 💻 Local Development
-
-Clone the repository:
+First, run the development server:
 
 ```bash
-git clone https://github.com/jyotish6699/jyotish-portfolio.git
-cd jyotish-portfolio
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
+```
+
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+
+## Learn More
+
+To learn more about Next.js, take a look at the following resources:
+
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+
+## Deploy on Vercel
+
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
