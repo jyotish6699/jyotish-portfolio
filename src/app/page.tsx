@@ -1,13 +1,14 @@
+import { CardStack } from "@/components/cards/CardStack";
 import { HeroCard } from "@/components/hero/HeroCard";
 
 export default function Home() {
   return (
     <main>
-      <section className="portfolio-section min-h-screen">
-        <div className="portfolio-container">
+      <div className="portfolio-container">
+        <CardStack>
           <HeroCard />
-        </div>
-      </section>
+        </CardStack>
+      </div>
     </main>
   );
 }
