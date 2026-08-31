@@ -31,8 +31,13 @@ export function CardStack({ children }: CardStackProps) {
         },
         {
           root: null,
-          threshold: 0.55,
-          rootMargin: "-10% 0px -10% 0px",
+
+          // Use a narrow horizontal band around the viewport center.
+          // This makes exactly one card become active as it crosses
+          // the center instead of allowing multiple cards to be active.
+          rootMargin: "-45% 0px -45% 0px",
+
+          threshold: 0,
         },
       );
 
