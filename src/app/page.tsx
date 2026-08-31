@@ -2,6 +2,7 @@ import { AboutCard } from "@/components/about/AboutCard";
 import { CardStack } from "@/components/cards/CardStack";
 import { ContactCard } from "@/components/contact/ContactCard";
 import { EducationCard } from "@/components/education/EducationCard";
+import { Footer } from "@/components/footer/Footer";
 import { GitHubCard } from "@/components/github/GitHubCard";
 import { HeroCard } from "@/components/hero/HeroCard";
 import { LeetCodeCard } from "@/components/leetcode/LeetCodeCard";
@@ -26,6 +27,8 @@ export default function Home() {
           <EducationCard />
           <ContactCard />
         </CardStack>
+
+        <Footer />
       </div>
     </main>
   );
