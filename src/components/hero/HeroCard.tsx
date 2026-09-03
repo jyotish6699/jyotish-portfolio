@@ -41,7 +41,7 @@ export function HeroCard() {
                 fill
                 priority
                 sizes="(max-width: 768px) 192px, (max-width: 1024px) 208px, 224px"
-                className="object-cover"
+                className="object-cover scale-110"
               />
             </div>
           </div>
