@@ -9,6 +9,7 @@ import { LeetCodeCard } from "@/components/leetcode/LeetCodeCard";
 import { Navbar } from "@/components/navbar/Navbar";
 import { OpenSourceCard } from "@/components/open-source/OpenSourceCard";
 import { ProjectsCard } from "@/components/projects/ProjectsCard";
+import { ResumeCard } from "@/components/resume/ResumeCard";
 import { SkillsCard } from "@/components/skills/SkillsCard";
 import TerminalCard from "@/components/terminal/TerminalCard";
 
@@ -53,6 +54,10 @@ export default function Home() {
 
           <section id="education">
             <EducationCard />
+          </section>
+
+          <section id="resume">
+            <ResumeCard />
           </section>
 
           <section id="contact">
