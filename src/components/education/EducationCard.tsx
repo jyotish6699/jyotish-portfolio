@@ -1,6 +1,9 @@
+import { ExternalLink } from "lucide-react";
 import { PortfolioCard } from "@/components/cards/PortfolioCard";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import { education } from "@/data/education";
+
+const resumePath = "/Jyotish_Kumar_CV.pdf";
 
 export function EducationCard() {
   return (
@@ -86,6 +89,26 @@ export function EducationCard() {
                 </div>
               ))}
             </div>
+          </div>
+
+          <div className="mt-8 flex flex-wrap gap-3 border-t border-black/10 pt-6">
+            <a
+              href={resumePath}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-2 rounded-full bg-gray-950 px-5 py-3 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:bg-black"
+            >
+              View Resume
+              <ExternalLink size={16} />
+            </a>
+
+            <a
+              href={resumePath}
+              download
+              className="inline-flex items-center gap-2 rounded-full border border-black/10 bg-white px-5 py-3 text-sm font-semibold text-gray-950 transition hover:-translate-y-0.5 hover:bg-gray-50"
+            >
+              Download CV
+            </a>
           </div>
         </div>
       </div>
