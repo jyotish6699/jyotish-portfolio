@@ -1,11 +1,7 @@
-"use client";
-
-import { useEffect } from "react";
+import "./arsalan.css";
 
 export default function Home() {
-  useEffect(() => {
-    window.location.replace("/arsalan-portfolio.html");
-  }, []);
-
-  return null;
+  return (
+    <main id="portfolio-root" />
+  );
 }
