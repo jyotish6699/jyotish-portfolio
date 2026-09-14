@@ -16,20 +16,25 @@ export default function Home() {
       doc.documentElement.style.height = "100%";
       doc.body.style.minHeight = "100%";
 
-      // Use the new user-supplied portrait without changing the source image.
-      doc.querySelectorAll<HTMLImageElement>('img[src="/profile.jpeg"], img[src="/profile.jpg"]').forEach((img) => {
-        img.src = "/profile.png";
-        img.srcset = "";
+      // Always target the actual portrait element, regardless of the old
+      // filename used by the static reference document.
+      doc.querySelectorAll<HTMLImageElement>(".portrait img").forEach((img) => {
+        img.src = "/profile.png?v=2";
+        img.removeAttribute("srcset");
         img.style.width = "100%";
         img.style.height = "100%";
         img.style.objectFit = "cover";
         img.style.objectPosition = "center 20%";
         img.style.display = "block";
+        img.style.transform = "none";
         img.style.filter = "none";
       });
 
-      // Match the reference portfolio's clean editorial portrait treatment:
-      // rectangular crop, no circular mask, and no distortion of the photo.
+      const oldStyle = doc.getElementById("jk-portrait-override");
+      if (oldStyle) oldStyle.remove();
+
+      // Editorial rectangular portrait: the original image stays untouched;
+      // CSS controls the visible crop and responsive dimensions.
       const style = doc.createElement("style");
       style.id = "jk-portrait-override";
       style.textContent = `
@@ -56,6 +61,7 @@ export default function Home() {
           object-position: center 20% !important;
           transform: none !important;
           filter: none !important;
+          display: block !important;
         }
         @media (max-width: 900px) {
           .portrait-wrap { justify-content: center !important; }
