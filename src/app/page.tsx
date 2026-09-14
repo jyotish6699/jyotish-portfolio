@@ -8,14 +8,66 @@ export default function Home() {
   useEffect(() => {
     const iframe = frame.current;
     if (!iframe) return;
+
     const enhance = () => {
       const doc = iframe.contentDocument;
       if (!doc) return;
-      // The portfolio is intentionally self-contained: its interaction layer,
-      // styles, and markup live in the static portfolio document.
+
       doc.documentElement.style.height = "100%";
       doc.body.style.minHeight = "100%";
+
+      // Use the new user-supplied portrait without changing the source image.
+      doc.querySelectorAll<HTMLImageElement>('img[src="/profile.jpeg"], img[src="/profile.jpg"]').forEach((img) => {
+        img.src = "/profile.png";
+        img.srcset = "";
+        img.style.width = "100%";
+        img.style.height = "100%";
+        img.style.objectFit = "cover";
+        img.style.objectPosition = "center 20%";
+        img.style.display = "block";
+        img.style.filter = "none";
+      });
+
+      // Match the reference portfolio's clean editorial portrait treatment:
+      // rectangular crop, no circular mask, and no distortion of the photo.
+      const style = doc.createElement("style");
+      style.id = "jk-portrait-override";
+      style.textContent = `
+        .portrait-wrap { justify-content: flex-end !important; }
+        .portrait {
+          width: min(100%, 520px) !important;
+          aspect-ratio: 4 / 5 !important;
+          height: auto !important;
+          border-radius: 0 !important;
+          overflow: hidden !important;
+          position: relative !important;
+          border: 1px solid var(--line) !important;
+          background: var(--ink2) !important;
+        }
+        .portrait::after {
+          border-radius: 0 !important;
+          box-shadow: inset 0 0 0 1px rgba(236,232,225,.08) !important;
+          pointer-events: none !important;
+        }
+        .portrait img {
+          width: 100% !important;
+          height: 100% !important;
+          object-fit: cover !important;
+          object-position: center 20% !important;
+          transform: none !important;
+          filter: none !important;
+        }
+        @media (max-width: 900px) {
+          .portrait-wrap { justify-content: center !important; }
+          .portrait { width: min(100%, 500px) !important; }
+        }
+        @media (max-width: 620px) {
+          .portrait { width: 100% !important; aspect-ratio: 4 / 5 !important; }
+        }
+      `;
+      doc.head.appendChild(style);
     };
+
     iframe.addEventListener("load", enhance);
     return () => iframe.removeEventListener("load", enhance);
   }, []);
