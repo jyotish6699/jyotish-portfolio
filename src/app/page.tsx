@@ -40,6 +40,17 @@ export default function Home() {
         @media(max-width:620px){.portrait{width:100%!important;aspect-ratio:4/5!important}}
       `;
       doc.head.appendChild(style);
+
+      // The static document is the visual shell; this is the interaction layer
+      // that powers smooth scrolling, ScrollTrigger reveals, cursor physics,
+      // sticky project transitions, navigation state and other portfolio UX.
+      if (!doc.querySelector('script[data-jyotish-enhance="true"]')) {
+        const script = doc.createElement("script");
+        script.src = "/portfolio-enhance.js?v=4";
+        script.async = false;
+        script.dataset.jyotishEnhance = "true";
+        doc.body.appendChild(script);
+      }
     };
 
     iframe.addEventListener("load", enhance);
